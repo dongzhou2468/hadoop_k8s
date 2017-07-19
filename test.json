@@ -1,0 +1,30 @@
+{
+	"kind":"ReplicationController",
+	"apiVersion":"v1",
+	"metadata":{
+		"name":"hadoop-test"
+	},
+	"spec":{
+		"replicas": 3,
+		"selector": {
+			"name": "hadoop"
+		},
+		"template": {
+			"metadata": {
+				"labels": {
+					"name": "hadoop"
+				}
+			},
+			"spec": {
+				"containers": [
+					{
+						"name":"node",
+						"image":"10.0.0.34:15001/hadoop:test",
+						"ports":[
+						]
+					}
+				]
+			}
+		}
+	}
+}
